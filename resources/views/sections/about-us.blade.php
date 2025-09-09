@@ -35,7 +35,7 @@
                 <!-- IMAGE BLOCK -->
                 <div class="col-md-5 col-lg-6">
                     <div class="img-block right-column wow fadeInLeft">
-                        <img class="img-fluid" src="https://starvik.com.vn/images/team.jpg" alt="about-image">
+                        <img class="img-fluid" src="{{ asset('images/team/team.png') }}" alt="about-image">
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                 <!-- IMAGE -->
                 <div class="col-md-6 col-lg-7">
                     <div class="about-9-img wow fadeInLeft">
-                        <img class="img-fluid" src="https://starvik.com.vn/images/team-building.jpg" alt="about-image">
+                        <img class="img-fluid" src="{{ asset('images/team/team-building.png') }}" alt="about-image">
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@
                                             Máy đo huyết áp điện tử bắp tay với công nghệ hiện đại, dễ sử dụng và độ chính xác cao
                                         </p>
                                         <div class="fade-item fade-item-3">
-                                            <a href="#" class="tf-btn animate-btn fw-normal">
+                                            <a href="#" class="tf-btn animate-btn fw-normal" onclick="contactForProductSlider('Máy đo huyết áp điện tử bắp tay')">
                                                 Mua ngay
                                                 <i class="icon icon-arrow-right"></i>
                                             </a>
@@ -53,7 +53,7 @@
                                             Máy xay thịt đa năng với công nghệ hiện đại, dễ sử dụng và độ chính xác cao
                                         </p>
                                         <div class="fade-item fade-item-3">
-                                            <a href="#" class="tf-btn animate-btn fw-normal">
+                                            <a href="#" class="tf-btn animate-btn fw-normal" onclick="contactForProductSlider('Máy xay thịt đa năng Perfekt')">
                                                 Mua ngay
                                                 <i class="icon icon-arrow-right"></i>
                                             </a>
@@ -84,7 +84,7 @@
                                             Ở trọ - không có bếp? Không sao! Có nồi điện 2 tầng là đủ cho căn bếp mini
                                         </p>
                                         <div class="fade-item fade-item-3">
-                                            <a href="#" class="tf-btn animate-btn fw-normal">
+                                            <a href="#" class="tf-btn animate-btn fw-normal" onclick="contactForProductSlider('Nồi điện 2 tầng Perfekt')">
                                                 Mua ngay
                                                 <i class="icon icon-arrow-right"></i>
                                             </a>

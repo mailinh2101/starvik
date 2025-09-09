@@ -16,7 +16,7 @@
                             Chăm sóc sức khỏe nhân viên & nâng cao hiệu suất làm việc
                         </a>
                         <p class="sub-text text-black h5">Thiết bị y tế, nhà bếp công nghiệp và giải pháp thư giản được thiết kế dành riêng cho viện dưỡng lão, bệnh viện, văn phòng, khu công nghiệp</p>
-                        <a href="shop-default.html" class="tf-btn animate-btn">
+                        <a href="#" class="tf-btn animate-btn" onclick="contactForProductSlider('Giải pháp tiện ích cho doanh nghiệp')">
                             Nhận tư vấn
                             <i class="icon icon-arrow-right"></i>
                         </a>

@@ -45,7 +45,7 @@
                         <div class="col-md-6 col-lg-4 mb-20">
                             <div class="article-blog type-space-2 hover-img4 h-100 position-relative">
                                 <a href="{{ route('news.show', $article->slug) }}" class="entry_image img-style4">
-                                    <img src="{{ $article->featured_image ? asset($article->featured_image) : asset('images/blog/blog-5.jpg') }}"
+                                    <img src="{{ $article->featured_image_url }}"
                                          alt="{{ $article->title }}"
                                          class="lazyload">
                                 </a>

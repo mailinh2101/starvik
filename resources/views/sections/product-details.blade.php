@@ -183,7 +183,7 @@
                                         <i class="icon icon-phone"></i>
                                         <div class="contact-content">
                                             <span class="contact-label">Hotline</span>
-                                            <a href="tel:+84123456789" class="contact-value">0123 456 789</a>
+                                            <a href="tel:0916976795" class="contact-value">091 697 6795</a>
                                         </div>
                                     </div>
                                     <div class="contact-item">
@@ -205,11 +205,11 @@
 
                             <!-- Action Buttons -->
                             <div class="action-buttons">
-                                <button type="button" class="tf-btn btn-primary btn-lg" onclick="callNow()">
+                                <button type="button" class="tf-btn btn-primary btn-lg" onclick="contactForAdvice()">
                                     <i class="icon icon-phone"></i>
                                     Gọi ngay để tư vấn
                                 </button>
-                                <button type="button" class="tf-btn btn-outline-primary btn-lg" onclick="sendEmail()">
+                                <button type="button" class="tf-btn btn-outline-primary btn-lg" onclick="contactForAdvice()">
                                     <i class="icon icon-mail"></i>
                                     Gửi yêu cầu tư vấn
                                 </button>
@@ -760,6 +760,156 @@
         padding: 1.5rem;
     }
 }
+
+/* Contact Modal Styles */
+.contact-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.contact-modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease;
+}
+
+.contact-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+.contact-modal-header h4 {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.contact-modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.contact-modal-close:hover,
+.contact-modal-close:focus {
+    color: #333;
+}
+
+.contact-modal-body {
+    padding: 25px;
+}
+
+.contact-modal-body p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-options .btn {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-options .btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.contact-options .btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.contact-options .btn-primary {
+    background-color: #25D366;
+    color: white;
+}
+
+.contact-options .btn-primary:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+.contact-options .btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.contact-options .btn-info:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-modal-content {
+        margin: 20% auto;
+        width: 95%;
+    }
+    
+    .contact-modal-header {
+        padding: 15px 20px;
+    }
+    
+    .contact-modal-body {
+        padding: 20px;
+    }
+    
+    .contact-options {
+        gap: 12px;
+    }
+}
 </style>
 
 <script>
@@ -885,8 +1035,81 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Action functions - attach to window for global access
+window.contactForAdvice = function() {
+    const productName = document.querySelector('.tf-product-info-title')?.textContent || 'Sản phẩm';
+    const modal = createAdviceModal(productName);
+    document.body.appendChild(modal);
+    modal.style.display = 'block';
+};
+
+function createAdviceModal(productName) {
+    const modal = document.createElement('div');
+    modal.className = 'contact-modal';
+    modal.innerHTML = `
+        <div class="contact-modal-content">
+            <div class="contact-modal-header">
+                <h4>Liên hệ tư vấn sản phẩm</h4>
+                <span class="contact-modal-close">&times;</span>
+            </div>
+            <div class="contact-modal-body">
+                <p><strong>Sản phẩm:</strong> ${productName}</p>
+                <p>Chọn cách liên hệ:</p>
+                <div class="contact-options">
+                    <button class="btn btn-success" onclick="callDirectAdvice()">
+                        <i class="fas fa-phone"></i> Gọi ngay: 091 697 6795
+                    </button>
+                    <button class="btn btn-primary" onclick="contactWhatsAppAdvice('${productName}')">
+                        <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                    </button>
+                    <button class="btn btn-info" onclick="sendEmailAdvice('${productName}')">
+                        <i class="fas fa-envelope"></i> Gửi Email
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Add event listener for close button
+    modal.querySelector('.contact-modal-close').addEventListener('click', function() {
+        modal.remove();
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+
+    return modal;
+}
+
+window.callDirectAdvice = function() {
+    window.location.href = 'tel:0916976795';
+    const modal = document.querySelector('.contact-modal');
+    if (modal) modal.remove();
+};
+
+window.contactWhatsAppAdvice = function(productName) {
+    const message = `Tôi muốn tư vấn về sản phẩm: ${productName}`;
+    const phone = "84916976795";
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    const modal = document.querySelector('.contact-modal');
+    if (modal) modal.remove();
+};
+
+window.sendEmailAdvice = function(productName) {
+    const subject = encodeURIComponent('Yêu cầu tư vấn sản phẩm: ' + productName);
+    const body = encodeURIComponent('Xin chào StarVik,\n\nTôi muốn được tư vấn về sản phẩm: ' + productName + '\n\nVui lòng liên hệ lại với tôi.\n\nCảm ơn!');
+    window.location.href = `mailto:info@starvik.com?subject=${subject}&body=${body}`;
+    const modal = document.querySelector('.contact-modal');
+    if (modal) modal.remove();
+};
+
+// Keep old functions for backward compatibility
 window.callNow = function() {
-    window.location.href = 'tel:+84123456789';
+    window.location.href = 'tel:0916976795';
 };
 
 window.sendEmail = function() {
@@ -998,6 +1221,15 @@ window.addEventListener('scroll', function() {
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Add click handlers for action buttons if they exist
+    const adviceButtons = document.querySelectorAll('[onclick="contactForAdvice()"]');
+    adviceButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.contactForAdvice();
+        });
+    });
+
+    // Keep backward compatibility
     const callButton = document.querySelector('[onclick="callNow()"]');
     if (callButton) {
         callButton.addEventListener('click', function(e) {

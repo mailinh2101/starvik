@@ -63,7 +63,7 @@
 
                             @if($news->featured_image)
                                 <div class="entry-image mb-4">
-                                    <img src="{{ asset($news->featured_image) }}"
+                                    <img src="{{ $news->featured_image_url }}"
                                          class="img-fluid rounded"
                                          alt="{{ $news->title }}">
                                 </div>
@@ -120,7 +120,7 @@
                                     @if($related->featured_image)
                                     <div class="related-image">
                                         <a href="{{ route('news.show', $related->slug) }}">
-                                            <img src="{{ asset($related->featured_image) }}" alt="{{ $related->title }}" class="img-fluid rounded">
+                                            <img src="{{ $related->featured_image_url }}" alt="{{ $related->title }}" class="img-fluid rounded">
                                         </a>
                                     </div>
                                     @endif

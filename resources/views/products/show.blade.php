@@ -56,18 +56,18 @@
                         <div class="product-gallery">
                             <!-- Main Image -->
                             <div class="main-image">
-                                <img id="mainProductImage" src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="img-fluid">
+                                <img id="mainProductImage" src="{{ $product->image_url }}" alt="{{ $product->name }}" class="img-fluid">
                             </div>
 
                             <!-- Thumbnail Gallery -->
                             @if($product->gallery && count($product->gallery) > 0)
                             <div class="thumbnail-gallery">
-                                <div class="thumbnail active" onclick="changeMainImage('{{ asset($product->image) }}', this)">
-                                    <img src="{{ asset($product->image) }}" alt="{{ $product->name }}">
+                                <div class="thumbnail active" onclick="changeMainImage('{{ $product->image_url }}', this)">
+                                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
                                 </div>
-                                @foreach($product->gallery as $image)
-                                <div class="thumbnail" onclick="changeMainImage('{{ asset($image) }}', this)">
-                                    <img src="{{ asset($image) }}" alt="{{ $product->name }}">
+                                @foreach($product->gallery_urls as $image_url)
+                                <div class="thumbnail" onclick="changeMainImage('{{ $image_url }}', this)">
+                                    <img src="{{ $image_url }}" alt="{{ $product->name }}">
                                 </div>
                                 @endforeach
                             </div>
@@ -77,20 +77,18 @@
 
                     <div class="col-lg-6 col-md-6">
                         <div class="product-info">
-                            <h1 class="product-title">{{ $product->name }}</h1>
-
                             @if($product->brand)
-                            <div class="product-brand">
-                                <strong>Thương hiệu:</strong> {{ $product->brand }}
-                            </div>
+                            <div class="product-brand">{{ $product->brand }}</div>
                             @endif
+
+                            <h1 class="product-title">{{ $product->name }}</h1>
 
                             @if($product->category)
                             <span class="product-category">{{ ucfirst($product->category) }}</span>
                             @endif
 
                             <div class="product-description">
-                                {{ $product->description }}
+                                {!! $product->description !!}
                             </div>
 
                             <div class="action-buttons">
@@ -123,7 +121,7 @@
                         <div class="product-item">
                             <div class="image">
                                 <a href="{{ route('products.show', $related->slug) }}">
-                                    <img src="{{ asset($related->image) }}" alt="{{ $related->name }}" class="img-fluid">
+                                    <img src="{{ $related->image_url }}" alt="{{ $related->name }}" class="img-fluid">
                                 </a>
                             </div>
                             <div class="content">

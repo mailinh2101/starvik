@@ -15,13 +15,13 @@
                 <div class="swiper-slide">
                     <a href="{{ route('products.show', $product) }}" class="widget-collection hover-img type-space-2">
                         <div class="collection_image img-style rounded-0">
-                            <img class="lazyload" src="{{ asset($product->image) }}"
-                                data-src="{{ asset($product->image) }}" alt="{{ $product->name }}">
+                            <img class="lazyload" src="{{ $product->image_url }}"
+                                data-src="{{ $product->image_url }}" alt="{{ $product->name }}">
                         </div>
-                        <h5 class="collection_name fw-semibold link">{{ $product->name }}</h5>
                         @if($product->brand)
-                            <small class="text-muted">{{ $product->brand }}</small>
+                            <div class="collection_brand">{{ $product->brand }}</div>
                         @endif
+                        <h5 class="collection_name fw-semibold link">{{ $product->name }}</h5>
                     </a>
                 </div>
                 @endforeach

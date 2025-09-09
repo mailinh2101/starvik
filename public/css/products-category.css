@@ -235,10 +235,24 @@
 }
 
 .product-brand {
-    color: #888;
-    font-size: 0.9rem;
+    background: linear-gradient(135deg, #fd7e14, #e55a4e);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 15px;
+    display: inline-block;
     margin-bottom: 10px;
-    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(253, 126, 20, 0.2);
+    transition: all 0.3s ease;
+}
+
+.product-brand:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(253, 126, 20, 0.3);
+    background: linear-gradient(135deg, #e55a4e, #fd7e14);
 }
 
 .product-description {

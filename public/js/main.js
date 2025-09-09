@@ -1438,4 +1438,70 @@
         RTL();
         preloader();
     });
+
+    // Contact Functions for Home Page Sliders
+    window.contactForProductSlider = function(productName) {
+        // Create a modal or choice dialog
+        const modal = createContactModalHome(productName);
+        document.body.appendChild(modal);
+        modal.style.display = 'block';
+    };
+
+    function createContactModalHome(productName) {
+        const modal = document.createElement('div');
+        modal.className = 'contact-modal';
+        modal.innerHTML = `
+            <div class="contact-modal-content">
+                <div class="contact-modal-header">
+                    <h4>Liên hệ tư vấn sản phẩm</h4>
+                    <span class="contact-modal-close">&times;</span>
+                </div>
+                <div class="contact-modal-body">
+                    <p><strong>Sản phẩm:</strong> ${productName}</p>
+                    <p>Chọn cách liên hệ:</p>
+                    <div class="contact-options">
+                        <button class="btn btn-success" onclick="callDirectHome()">
+                            <i class="fas fa-phone"></i> Gọi ngay: 091 697 6795
+                        </button>
+                        <button class="btn btn-primary" onclick="contactWhatsAppHome('${productName}')">
+                            <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Add event listener for close button
+        modal.querySelector('.contact-modal-close').addEventListener('click', function() {
+            modal.remove();
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+
+        return modal;
+    }
+
+    window.callDirectHome = function() {
+        const phone = "0916976795";
+        window.location.href = `tel:${phone}`;
+        // Close modal
+        const modal = document.querySelector('.contact-modal');
+        if (modal) modal.remove();
+    };
+
+    window.contactWhatsAppHome = function(productName) {
+        const message = `Tôi muốn tư vấn về sản phẩm: ${productName}`;
+        const phone = "84916976795";
+        const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        // Close modal
+        const modal = document.querySelector('.contact-modal');
+        if (modal) modal.remove();
+    };
+
 })(jQuery);

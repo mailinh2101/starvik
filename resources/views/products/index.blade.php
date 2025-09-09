@@ -103,7 +103,7 @@
 
                                 <div class="product-image">
                                     <a href="{{ route('products.show', $product->slug) }}">
-                                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" loading="lazy">
+                                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}" loading="lazy">
                                     </a>
                                 </div>
 
@@ -112,15 +112,15 @@
                                     <div class="product-category">{{ ucfirst($product->category) }}</div>
                                     @endif
 
-                                    <h3 class="product-title">
-                                        <a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a>
-                                    </h3>
-
                                     @if($product->brand)
                                     <div class="product-brand">{{ $product->brand }}</div>
                                     @endif
 
-                                    <p class="product-description">{{ Str::limit($product->description, 100) }}</p>
+                                    <h3 class="product-title">
+                                        <a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a>
+                                    </h3>
+
+                                    <p class="product-description">{!! Str::limit($product->seo_title, 100, ' (...)') !!}</p>
 
                                     <div class="product-actions">
                                         <a href="{{ route('products.show', $product->slug) }}" class="btn-view">

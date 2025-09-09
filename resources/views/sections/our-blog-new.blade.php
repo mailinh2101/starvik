@@ -12,8 +12,8 @@
                   <div class="swiper-slide">
                       <div class="article-blog type-space-2 hover-img4 wow fadeInLeft" @if($index > 0) data-wow-delay="{{ $index * 0.1 }}s" @endif>
                           <a href="{{ route('news.show', $article->slug) }}" class="entry_image img-style4">
-                              <img src="{{ $article->featured_image ? asset($article->featured_image) : asset('images/blog/blog-5.jpg') }}"
-                                  data-src="{{ $article->featured_image ? asset($article->featured_image) : asset('images/blog/blog-5.jpg') }}"
+                              <img src="{{ $article->featured_image_url }}"
+                                  data-src="{{ $article->featured_image_url }}"
                                   alt="{{ $article->title }}"
                                   class="lazyload aspect-ratio-0">
                           </a>
