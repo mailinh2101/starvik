@@ -11,16 +11,17 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Grid;
-use Filament\Schemas\Schema;
+use Filament\Forms\Form;
 use Illuminate\Support\Str;
 
 class NewsForm
 {
-    public static function configure(Schema $schema): Schema
+    public static function configure(Form $form): Form
     {
-        return $schema
-            ->columns(2)
-            ->components([
+        return $form
+            ->schema([
+                Grid::make(2)
+                    ->schema([
                 TextInput::make('title')
                     ->label('Tiêu đề')
                     ->required()
@@ -166,6 +167,7 @@ class NewsForm
                     ->visibility('public')
                     ->helperText('Ảnh hiển thị khi chia sẻ trên mạng xã hội (1200x630px)')
                     ->columnSpan(2),
+                    ])
             ]);
     }
 }

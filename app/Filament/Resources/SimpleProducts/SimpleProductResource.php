@@ -8,17 +8,15 @@ use App\Filament\Resources\SimpleProducts\Pages\ListSimpleProducts;
 use App\Filament\Resources\SimpleProducts\Schemas\SimpleProductForm;
 use App\Filament\Resources\SimpleProducts\Tables\SimpleProductsTable;
 use App\Models\SimpleProduct;
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class SimpleProductResource extends Resource
 {
     protected static ?string $model = SimpleProduct::class;
 
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-cube';
+    protected static ?string $navigationIcon = 'heroicon-o-cube';
 
     protected static ?string $navigationLabel = 'Sản phẩm';
 
@@ -28,9 +26,9 @@ class SimpleProductResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return SimpleProductForm::configure($schema);
+        return SimpleProductForm::configure($form);
     }
 
     public static function table(Table $table): Table

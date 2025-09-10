@@ -8,17 +8,15 @@ use App\Filament\Resources\News\Pages\ListNews;
 use App\Filament\Resources\News\Schemas\NewsForm;
 use App\Filament\Resources\News\Tables\NewsTable;
 use App\Models\News;
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class NewsResource extends Resource
 {
     protected static ?string $model = News::class;
 
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-newspaper';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     protected static ?string $navigationLabel = 'Tin tức';
 
@@ -28,9 +26,9 @@ class NewsResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return NewsForm::configure($schema);
+        return NewsForm::configure($form);
     }
 
     public static function table(Table $table): Table
