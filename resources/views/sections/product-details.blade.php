@@ -881,11 +881,11 @@
 }
 
 @keyframes slideIn {
-    from { 
+    from {
         opacity: 0;
         transform: translateY(-30px);
     }
-    to { 
+    to {
         opacity: 1;
         transform: translateY(0);
     }
@@ -897,15 +897,15 @@
         margin: 20% auto;
         width: 95%;
     }
-    
+
     .contact-modal-header {
         padding: 15px 20px;
     }
-    
+
     .contact-modal-body {
         padding: 20px;
     }
-    
+
     .contact-options {
         gap: 12px;
     }

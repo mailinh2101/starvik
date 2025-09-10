@@ -59,7 +59,7 @@ function changeMainImage(imageSrc, thumbnail) {
 function contactForProduct() {
     const productNameElement = document.querySelector('.product-title');
     const productName = productNameElement ? productNameElement.textContent.trim() : 'Sản phẩm';
-    
+
     // Create a modal or choice dialog
     const modal = createContactModal(productName);
     document.body.appendChild(modal);

@@ -73,12 +73,21 @@
                                 {!! $news->content !!}
                             </div>
 
-                            @if($news->tags && count($news->tags) > 0)
+                            @php
+                                $tags = $news->tags;
+                                if (is_string($tags)) {
+                                    $tags = array_filter(array_map('trim', explode(',', $tags)));
+                                } elseif (!is_array($tags)) {
+                                    $tags = [];
+                                }
+                            @endphp
+
+                            @if($tags && count($tags) > 0)
                             <div class="entry-tags mt-4 pt-3 border-top">
                                 <h6 class="mb-3">Thẻ tag:</h6>
                                 <div class="tags-list">
-                                    @foreach($news->tags as $tag)
-                                        <span class="tag-item">{{ $tag }}</span>
+                                    @foreach($tags as $tag)
+                                        <span class="tag-item">{{ trim($tag) }}</span>
                                     @endforeach
                                 </div>
                             </div>

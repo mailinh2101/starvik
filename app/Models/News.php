@@ -72,6 +72,17 @@ class News extends Model
         $this->attributes['slug'] = $value ?: \Str::slug($this->title);
     }
 
+    public function setTagsAttribute($value)
+    {
+        if (is_string($value)) {
+            $this->attributes['tags'] = json_encode(array_filter(array_map('trim', explode(',', $value))));
+        } elseif (is_array($value)) {
+            $this->attributes['tags'] = json_encode(array_filter($value));
+        } else {
+            $this->attributes['tags'] = json_encode([]);
+        }
+    }
+
     // Accessors
     public function getImageAttribute()
     {
@@ -97,6 +108,26 @@ class News extends Model
     public function getExcerptAttribute($value)
     {
         return $value ?: \Str::limit(strip_tags($this->content), 160);
+    }
+
+    public function getTagsAttribute($value)
+    {
+        if (empty($value)) {
+            return [];
+        }
+
+        $decoded = json_decode($value, true);
+
+        if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+            return array_filter($decoded);
+        }
+
+        // Fallback for comma-separated string
+        if (is_string($value)) {
+            return array_filter(array_map('trim', explode(',', $value)));
+        }
+
+        return [];
     }
 
     // Route key name for URL generation

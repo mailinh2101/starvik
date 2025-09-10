@@ -89,7 +89,7 @@
         });
     };
 
-    /* Delete File 
+    /* Delete File
     -------------------------------------------------------------------------*/
     var deleteFile = function (e) {
         function updateCount() {
@@ -290,7 +290,7 @@
         }
     };
 
-    /* Check Active 
+    /* Check Active
     -------------------------------------------------------------------------*/
     var checkClick = function () {
         $(".flat-check-list").on("click", ".check-item", function () {
@@ -597,7 +597,7 @@
         $(window).on("resize", handleAccordion);
     };
 
-    /* Infinite Slide 
+    /* Infinite Slide
     -------------------------------------------------------------------------*/
     var infiniteSlide = function () {
         if ($(".infiniteSlide").length > 0) {
@@ -650,7 +650,7 @@
         });
     };
 
-    /* Handle Sidebar Filter 
+    /* Handle Sidebar Filter
     -------------------------------------------------------------------------*/
     var handleSidebarFilter = function () {
         $("#filterShop,.sidebar-btn").on("click", function () {
@@ -780,7 +780,7 @@
         });
     };
 
-    /* Parallaxie 
+    /* Parallaxie
     -------------------------------------------------------------------------*/
     var parallaxie = function () {
         var $window = $(window);
@@ -871,7 +871,7 @@
         checkEmpty();
     };
 
-    /* Click Active 
+    /* Click Active
     -------------------------------------------------------------------------*/
     var clickActive = function () {
         function isAllowed($container) {
@@ -1208,7 +1208,7 @@
         }
     };
 
-    /* Show Password 
+    /* Show Password
     -------------------------------------------------------------------------*/
     var showPassword = function () {
         $(".toggle-pass").on("click", function () {
@@ -1226,7 +1226,7 @@
         });
     };
 
-    /* Change Image Dashboard 
+    /* Change Image Dashboard
     -------------------------------------------------------------------------*/
     var changeImageDash = function () {
         $(".changeImgDash").on("click", function () {
