@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\SimpleProducts\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -126,7 +126,7 @@ class SimpleProductsTable
                     ->trueLabel('Đã kích hoạt')
                     ->falseLabel('Chưa kích hoạt'),
             ])
-            ->recordActions([
+            ->actions([
                 ViewAction::make()
                     ->label('Xem')
                     ->url(fn ($record) => route('products.show', $record->slug))
@@ -134,7 +134,7 @@ class SimpleProductsTable
                 EditAction::make()
                     ->label('Sửa'),
             ])
-            ->toolbarActions([
+            ->bulkActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make()
                         ->label('Xóa đã chọn'),
