@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Tin tức - Star Vik')
-@section('description', 'Star Vik  - CÔNG TY TNHH STAR VIK')
-@section('keywords', 'starvik, đồ gia dụng, thực phẩm chức năng, máy xay sinh tố')
+@section('title', 'Tin tức - ' . config('seo.company.name'))
+@section('description', config('seo.company.description'))
+@section('keywords', config('seo.defaults.keywords'))
 
 @section('body')
     <!-- Scroll Top -->

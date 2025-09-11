@@ -15,19 +15,19 @@
                                             <i class="icon icon-map-pin"></i>
                                             <span class="br-line"></span>
                                             <a href="https://www.google.com/maps/place/BSI+Tower/@10.8441306,106.7096083,17z/data=!3m1!4b1!4m6!3m5!1s0x3175299b1aef1dcb:0x7e01192379cc648f!8m2!3d10.8441306!4d106.7096083!16s%2Fg%2F11mv_f9gs8?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
-                                                target="_blank" class="h6 link">
-                                                Lầu 6, 195-197 Nguyễn Thị Nhung, Hiệp Bình Phước, Thủ Đức, Hồ Chí Minh
+                                                target="_blank" class="h4 link">
+                                                {{ config('seo.company.address') }}
                                             </a>
                                         </li>
                                         <li>
                                             <i class="icon icon-phone"></i>
                                             <span class="br-line"></span>
-                                            <a href="tel:0916976795" class="h6 link">(+84) 91 697 6795</a>
+                                            <a href="tel:{{ config('seo.company.phone') }}" class="h4 link">{{ config('seo.company.phone') }}</a>
                                         </li>
                                         <li>
                                             <i class="icon icon-envelope-simple"></i>
                                             <span class="br-line"></span>
-                                            <a href="mailto:hr03.gr@gmail.com" class="h6 link">hr03.gr@gmail.com</a>
+                                            <a href="mailto:{{ config('seo.company.email') }}" class="h4 link">{{ config('seo.company.email') }}</a>
                                         </li>
                                     </ul>
                                     <div class="social-wrap">
@@ -59,8 +59,8 @@
                                 <p class="footer-heading footer-heading-mobile">Mua sắm</p>
                                 <div class="tf-collapse-content">
                                     <ul class="footer-menu-list">
-                                        <li><a href="#" class="link h6">Điều khoản & Điều kiện</a></li>
-                                        <li><a href="#" class="link h6">Danh sách yêu thích</a></li>
+                                        <li><a href="#" class="link h4">Điều khoản & Điều kiện</a></li>
+                                        <li><a href="#" class="link h4">Danh sách yêu thích</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -70,11 +70,11 @@
                                 <p class="footer-heading footer-heading-mobile">Thông tin</p>
                                 <div class="tf-collapse-content">
                                     <ul class="footer-menu-list">
-                                        <li><a href="#" class="link h6">Về chúng tôi</a></li>
-                                        <li><a href="#" class="link h6">Điều khoản & Chính sách</a></li>
-                                        <li><a href="#" class="link h6">Trung tâm trợ giúp</a></li>
-                                        <li><a href="#" class="link h6">Tin tức & Blog</a></li>
-                                        <li><a href="#" class="link h6">Cơ hội nghề nghiệp</a></li>
+                                        <li><a href="/gioi-thieu" class="link h4">Về chúng tôi</a></li>
+                                        <li><a href="#" class="link h4">Điều khoản & Chính sách</a></li>
+                                        <li><a href="#" class="link h4">Trung tâm trợ giúp</a></li>
+                                        <li><a href="/tin-tuc" class="link h4">Tin tức & Blog</a></li>
+                                        <li><a href="#" class="link h4">Cơ hội nghề nghiệp</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                 <p class="footer-heading footer-heading-mobile">Hãy giữ liên lạc</p>
                                 <div class="tf-collapse-content">
                                     <div class="footer-newsletter">
-                                        <p class="h6 caption">
+                                        <p class="h4 caption">
                                             Nhập email của bạn bên dưới để là người đầu tiên biết về các sản phẩm mới
                                             sắp ra mắt.
                                         </p>
@@ -99,11 +99,7 @@
                                                                 d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z">
                                                             </path>
                                                         </svg>
-                                                        <span class="sib-form-message-panel__inner-text">Your
-                                                            subscription could not be saved. Please
-                                                            try again.
-                                                        </span>
-                                                    </div>
+                                                        <span class="sib-form-message-panel__inner-text">Đăng ký của bạn không thể được lưu. Vui lòng thử lại.</span>        </div>
                                                 </div>
                                                 <div id="success-message" class="sib-form-message-panel">
                                                     <div
@@ -114,8 +110,7 @@
                                                                 d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z">
                                                             </path>
                                                         </svg>
-                                                        <span class="sib-form-message-panel__inner-text">Your
-                                                            subscription has been successful.
+                                                        <span class="sib-form-message-panel__inner-text">Đăng ký của bạn đã được lưu.</span>
                                                         </span>
                                                     </div>
                                                 </div>

@@ -3,10 +3,10 @@
 {{-- SEO Section --}}
 @section('seo')
     <x-seo
-        title="Star Vik - Công ty TNHH Star Vik | Trang chủ"
-        description="Star Vik - CÔNG TY TNHH STAR VIK chuyên cung cấp đồ gia dụng, thực phẩm chức năng, máy xay sinh tố chất lượng cao"
-        keywords="starvik, đồ gia dụng, thực phẩm chức năng, máy xay sinh tố, công ty star vik"
-        :og_image="asset('images/logo/logo-starvik.png')"
+        :title="config('seo.defaults.title') . ' | Trang chủ'"
+        :description="config('seo.defaults.description')"
+        :keywords="config('seo.defaults.keywords')"
+        :og_image="config('seo.company.logo')"
         type="website"
     />
 @endsection

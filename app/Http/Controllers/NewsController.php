@@ -17,8 +17,8 @@ class NewsController extends Controller
         // SEO cho trang danh sách tin tức
         $seoData = [
             'title' => 'Tin tức - ' . config('app.name'),
-            'description' => 'Cập nhật tin tức mới nhất từ ' . env('COMPANY_NAME', config('app.name')) . '. Đọc các bài viết về sản phẩm, dịch vụ và hoạt động của công ty.',
-            'keywords' => 'tin tức, bài viết, ' . env('SITE_KEYWORDS', 'starvik'),
+            'description' => 'Cập nhật tin tức mới nhất từ ' . config('seo.company.name') . '. Đọc các bài viết về sản phẩm, dịch vụ và hoạt động của công ty.',
+            'keywords' => 'tin tức, bài viết, ' . config('seo.defaults.keywords'),
             'canonical' => url('/tin-tuc'),
             'og_image' => asset('images/banner-after.jpg'),
         ];
@@ -64,7 +64,7 @@ class NewsController extends Controller
             'type' => 'article',
             'published_time' => $news->published_at?->toISOString(),
             'modified_time' => $news->updated_at?->toISOString(),
-            'author' => $news->author ?? env('COMPANY_NAME'),
+            'author' => $news->author ?? config('seo.company.name'),
         ];
 
         return view('news.show', compact('news', 'seoData', 'relatedNews'));

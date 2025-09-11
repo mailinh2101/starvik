@@ -34,12 +34,12 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $view->with([
                 'siteName' => config('app.name'),
-                'companyName' => env('COMPANY_NAME'),
-                'companyDescription' => env('COMPANY_DESCRIPTION'),
-                'companyPhone' => env('COMPANY_PHONE'),
-                'companyEmail' => env('COMPANY_EMAIL'),
-                'companyAddress' => env('COMPANY_ADDRESS'),
-                'defaultOgImage' => env('COMPANY_LOGO_URL', asset('images/logo/logo-starvik.png')),
+                'companyName' => config('seo.company.name'),
+                'companyDescription' => config('seo.company.description'),
+                'companyPhone' => config('seo.company.phone'),
+                'companyEmail' => config('seo.company.email'),
+                'companyAddress' => config('seo.company.address'),
+                'defaultOgImage' => config('seo.company.logo'),
             ]);
         });
     }

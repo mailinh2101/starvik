@@ -13,30 +13,30 @@
                             <p class="title h1 fw-medium text-black">Thông tin liên hệ</p>
                             <ul class="infor-store">
                                 <li>
-                                    <h5 class="caption fw-semibold">Địa chỉ</h5>
-                                    <p class="h6 mb-12">
-                                        Lầu 6, 195-197 Nguyễn Thị Nhung, Hiệp Bình Phước, Thủ Đức, Hồ Chí Minh</p>
-                                    <a href="https://www.google.com/maps?q=195-197+Nguyễn+Thị+Nhung,+Hiệp+Bình+Phước,+Thủ+Đức,+Hồ+Chí+Minh"
+                                    <h3 class="caption fw-semibold">Địa chỉ</h3>
+                                    <p class="h3 mb-12">
+                                        {{ config('seo.company.address') }}</p>
+                                    <a href="https://www.google.com/maps?q=197+Nguyễn+Thị+Nhung,+Hiệp+Bình+Phước,+Thủ+Đức,+Hồ+Chí+Minh"
                                         target="_blank" class="tf-btn-line">
-                                        <span class="h6 text-capitalize fw-semibold">
+                                        <span class="h3 text-capitalize fw-semibold">
                                             Lấy chỉ đường
                                         </span>
                                         <i class="icon icon-arrow-top-right fs-20"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <h5 class="caption fw-semibold">Liên hệ với chúng tôi</h5>
+                                    <h3 class="caption fw-semibold">Liên hệ với chúng tôi</h3>
                                     <ul class="store-contact list-ver">
                                         <li>
                                             <i class="icon icon-phone"></i>
                                             <span class="br-line type-vertical"></span>
-                                            <a href="tel:+84916976795" class="h6 link">(+84) 91 697 6795</a>
+                                            <a href="tel:{{ config('seo.company.phone') }}" class="h3 link">{{ config('seo.company.phone') }}</a>
                                         </li>
                                         <li>
                                             <i class="icon icon-envelope-simple"></i>
                                             <span class="br-line type-vertical"></span>
-                                            <a href="mailto:hr03.gr@gmail.com"
-                                                class="h6 link">hr03.gr@gmail.com</a>
+                                            <a href="mailto:{{ config('seo.company.email') }}"
+                                                class="h3 link">{{ config('seo.company.email') }}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -44,12 +44,12 @@
                                     <h5 class="caption fw-semibold">Social Media</h5>
                                     <ul class="tf-social-icon">
                                         <li>
-                                            <a href="https://www.facebook.com/" target="_blank" class="social-facebook">
+                                            <a href="{{ config('seo.company.social.facebook') }}" target="_blank" class="social-facebook">
                                                 <span class="icon"><i class="icon-fb"></i></span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.instagram.com/" target="_blank"
+                                            <a href="{{ config('seo.company.social.instagram') }}" target="_blank"
                                                 class="social-instagram">
                                                 <span class="icon"><i class="icon-instagram-logo"></i></span>
                                             </a>
@@ -60,7 +60,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.tiktok.com/" target="_blank" class="social-tiktok">
+                                            <a href="https://www.tiktok.com/@shopgiadungperfekt" target="_blank" class="social-tiktok">
                                                 <span class="icon"><i class="icon-tiktok"></i></span>
                                             </a>
                                         </li>

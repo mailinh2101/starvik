@@ -26,10 +26,10 @@
         />
     @else
         <x-seo
-            :title="$title ?? 'Star Vik - Công ty TNHH Star Vik'"
-            :description="$description ?? env('COMPANY_DESCRIPTION')"
-            :keywords="$keywords ?? env('SITE_KEYWORDS')"
-            :og_image="$og_image ?? env('COMPANY_LOGO_URL')"
+            :title="$title ?? config('seo.defaults.title')"
+            :description="$description ?? config('seo.defaults.description')"
+            :keywords="$keywords ?? config('seo.defaults.keywords')"
+            :og_image="$og_image ?? config('seo.company.logo')"
         />
     @endif
 

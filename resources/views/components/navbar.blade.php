@@ -18,7 +18,7 @@
                         <span class="br-line type-vertical"></span>
                         <div class="sp-wrap">
                             <span class="text-small">Hỗ trợ trực tuyến</span>
-                            <a href="tel:0916976795" class="phone-number h4 fw-semibold link">(84) 91 697 6795</a>
+                            <a href="tel:0902381851" class="phone-number h4 fw-semibold link">{{ config('seo.company.phone') }}</a>
                         </div>
                     </div>
                 </div>

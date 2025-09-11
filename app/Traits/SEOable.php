@@ -55,7 +55,7 @@ trait SEOable
 
             // Thêm keywords mặc định
             $autoKeywords[] = config('app.name');
-            $autoKeywords[] = env('COMPANY_NAME');
+            $autoKeywords[] = config('seo.company.name');
 
             $keywords = implode(', ', array_filter($autoKeywords));
         }

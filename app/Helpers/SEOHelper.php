@@ -5,17 +5,17 @@ namespace App\Helpers;
 class SEOHelper
 {
     /**
-     * Get company information from environment
+     * Get company information from config
      */
     public static function getCompanyInfo(): array
     {
         return [
-            'name' => env('COMPANY_NAME', config('app.name')),
-            'description' => env('COMPANY_DESCRIPTION', 'Star Vik - Công ty TNHH Star Vik'),
-            'address' => env('COMPANY_ADDRESS', 'Việt Nam'),
-            'phone' => env('COMPANY_PHONE'),
-            'email' => env('COMPANY_EMAIL'),
-            'logo' => env('COMPANY_LOGO_URL', asset('images/logo.png')),
+            'name' => config('seo.company.name'),
+            'description' => config('seo.company.description'),
+            'address' => config('seo.company.address'),
+            'phone' => config('seo.company.phone'),
+            'email' => config('seo.company.email'),
+            'logo' => config('seo.company.logo'),
         ];
     }
 
@@ -117,7 +117,7 @@ class SEOHelper
         return [
             'title' => $data['title'] ?? $company['name'],
             'description' => self::limitText($data['description'] ?? $company['description'], 160),
-            'keywords' => $data['keywords'] ?? env('SITE_KEYWORDS', 'starvik, công ty, dịch vụ'),
+            'keywords' => $data['keywords'] ?? config('seo.defaults.keywords'),
             'author' => $company['name'],
             'canonical' => $data['canonical'] ?? request()->url(),
             'og_title' => $data['title'] ?? $company['name'],

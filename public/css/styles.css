@@ -82,6 +82,7 @@
   --verified: #00BF43;
   --success: #28A745;
   --error: #ff4949;
+  --bg-gradient: linear-gradient(135deg, #4689f7, #c2e9fb);
 }
 
 .primary {
@@ -270,7 +271,7 @@ body {
   line-height: 22px;
   font-weight: 400;
   color: var(--text);
-  background-color: var(--white);
+  background: var(--bg-gradient);
 }
 body::-webkit-scrollbar {
   width: 5px;
@@ -2091,7 +2092,7 @@ header.header-sticky {
   align-items: center;
   gap: 8px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 24px;
   padding-top: 35px;
   padding-bottom: 35px;
@@ -2790,6 +2791,7 @@ header.header-sticky {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
+  background: var(--bg-gradient);
 }
 
 .demo-label {

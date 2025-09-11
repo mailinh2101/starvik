@@ -7,10 +7,10 @@ return [
     |--------------------------------------------------------------------------
     */
     'defaults' => [
-        'title' => env('COMPANY_NAME', 'Star Vik'),
-        'description' => env('COMPANY_DESCRIPTION', 'Công ty TNHH Star Vik'),
-        'keywords' => env('SITE_KEYWORDS', 'starvik, công ty, dịch vụ'),
-        'author' => env('COMPANY_NAME', 'Star Vik'),
+        'title' => 'Star Vik - Công ty TNHH Star Vik',
+        'description' => 'Công ty TNHH Star Vik - Chuyên cung cấp các sản phẩm và dịch vụ chất lượng cao',
+        'keywords' => 'starvik, công ty, dịch vụ, sản phẩm, chất lượng',
+        'author' => 'Star Vik - Công ty TNHH Star Vik',
         'robots' => 'index, follow',
         'og_type' => 'website',
         'og_locale' => 'vi_VN',
@@ -23,12 +23,12 @@ return [
     |--------------------------------------------------------------------------
     */
     'company' => [
-        'name' => env('COMPANY_NAME', 'Star Vik'),
-        'description' => env('COMPANY_DESCRIPTION'),
-        'address' => env('COMPANY_ADDRESS'),
-        'phone' => env('COMPANY_PHONE'),
-        'email' => env('COMPANY_EMAIL'),
-        'logo' => env('COMPANY_LOGO_URL', '/images/logo.png'),
+        'name' => 'Star Vik - Công ty TNHH Star Vik',
+        'description' => 'Công ty TNHH Star Vik - Chuyên cung cấp các sản phẩm và dịch vụ chất lượng cao',
+        'address' => 'Lầu 6, 195-197 Nguyễn Thị Nhung, Hiệp Bình Phước, Thủ Đức, Hồ Chí Minh, Việt Nam',
+        'phone' => '0902.381.851',
+        'email' => 'kd.starvik@gmail.com',
+        'logo' => config('app.url') . '/images/logo/logo-starvik.png',
         'social' => [
             'facebook' => env('FACEBOOK_URL'),
             'twitter' => env('TWITTER_URL'),
@@ -68,11 +68,11 @@ return [
     |--------------------------------------------------------------------------
     */
     'open_graph' => [
-        'site_name' => env('COMPANY_NAME', 'Star Vik'),
+        'site_name' => 'Star Vik - Công ty TNHH Star Vik',
         'type' => 'website',
         'locale' => 'vi_VN',
         'image' => [
-            'default' => env('COMPANY_LOGO_URL', '/images/logo.png'),
+            'default' => config('app.url') . '/images/logo/logo-starvik.png',
             'width' => 1200,
             'height' => 630,
         ],

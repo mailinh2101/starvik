@@ -20,7 +20,7 @@
                             Nhận tư vấn
                             <i class="icon icon-arrow-right"></i>
                         </a>
-                        <ul>
+                        <ul class="list-info text-black mt-4 fs-3 lh-base">
                         <li>- Bảo hành chính hãng & dịch vụ hậu mãi tốt nhất</li>
                         <li>- Giá bán buôn cạnh tranh - chiếu khấu theo số lượng</li>
                         <li>- Tư vấn giải pháp trực tiếp cho doanh nghiệp</li>

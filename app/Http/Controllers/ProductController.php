@@ -15,8 +15,8 @@ class ProductController extends Controller
         // SEO cho trang danh sách sản phẩm
         $seoData = [
             'title' => 'Sản phẩm - ' . config('app.name'),
-            'description' => 'Khám phá bộ sưu tập sản phẩm chất lượng cao từ ' . env('COMPANY_NAME', config('app.name')) . '. Đồ gia dụng, thực phẩm chức năng, máy xay sinh tố và nhiều hơn nữa.',
-            'keywords' => 'sản phẩm, đồ gia dụng, thực phẩm chức năng, máy xay sinh tố, ' . env('SITE_KEYWORDS', 'starvik'),
+            'description' => 'Khám phá bộ sưu tập sản phẩm chất lượng cao từ ' . config('seo.company.name') . '. Đồ gia dụng, thực phẩm chức năng, máy xay sinh tố và nhiều hơn nữa.',
+            'keywords' => 'sản phẩm, đồ gia dụng, thực phẩm chức năng, máy xay sinh tố, ' . config('seo.defaults.keywords'),
             'canonical' => url('/san-pham'),
             'og_image' => asset('images/banner-after.jpg'),
         ];
@@ -48,7 +48,7 @@ class ProductController extends Controller
             'type' => 'product',
             'price' => $product->price ?? null,
             'availability' => $product->is_active ? 'InStock' : 'OutOfStock',
-            'brand' => $product->brand ?? env('COMPANY_NAME'),
+            'brand' => $product->brand ?? config('seo.company.name'),
         ];
 
         return view('products.show', compact('product', 'relatedProducts', 'seoData'));
@@ -61,8 +61,8 @@ class ProductController extends Controller
         // SEO cho trang sản phẩm nổi bật
         $seoData = [
             'title' => 'Sản phẩm nổi bật - ' . config('app.name'),
-            'description' => 'Khám phá các sản phẩm nổi bật được lựa chọn đặc biệt từ ' . env('COMPANY_NAME', config('app.name')) . '. Chất lượng cao, giá cả hợp lý.',
-            'keywords' => 'sản phẩm nổi bật, khuyến mãi, ' . env('SITE_KEYWORDS', 'starvik'),
+            'description' => 'Khám phá các sản phẩm nổi bật được lựa chọn đặc biệt từ ' . config('seo.company.name') . '. Chất lượng cao, giá cả hợp lý.',
+            'keywords' => 'sản phẩm nổi bật, khuyến mãi, ' . config('seo.defaults.keywords'),
             'canonical' => url('/san-pham/noi-bat'),
             'og_image' => asset('images/banner-after.jpg'),
         ];
@@ -81,8 +81,8 @@ class ProductController extends Controller
         // SEO cho trang tìm kiếm sản phẩm
         $seoData = [
             'title' => "Tìm kiếm: {$query} - " . config('app.name'),
-            'description' => "Kết quả tìm kiếm cho '{$query}' tại " . env('COMPANY_NAME', config('app.name')) . ". Tìm thấy " . $products->total() . " sản phẩm.",
-            'keywords' => $query . ', tìm kiếm sản phẩm, ' . env('SITE_KEYWORDS', 'starvik'),
+            'description' => "Kết quả tìm kiếm cho '{$query}' tại " . config('seo.company.name') . ". Tìm thấy " . $products->total() . " sản phẩm.",
+            'keywords' => $query . ', tìm kiếm sản phẩm, ' . config('seo.defaults.keywords'),
             'canonical' => url('/san-pham/tim-kiem?q=' . urlencode($query)),
             'og_image' => asset('images/banner-after.jpg'),
             'robots' => 'noindex, follow', // Không index trang tìm kiếm
@@ -94,16 +94,16 @@ class ProductController extends Controller
     public function category($category)
     {
         $products = SimpleProduct::where('category', $category)->active()->paginate(12);
-        
+
         // SEO cho trang danh mục sản phẩm
         $seoData = [
             'title' => "Danh mục " . ucfirst($category) . " - " . config('app.name'),
-            'description' => "Khám phá sản phẩm trong danh mục {$category} tại " . env('COMPANY_NAME', config('app.name')) . ". Chất lượng cao, giá cả hợp lý.",
-            'keywords' => $category . ', sản phẩm ' . $category . ', ' . env('SITE_KEYWORDS', 'starvik'),
+            'description' => "Khám phá sản phẩm trong danh mục {$category} tại " . config('seo.company.name') . ". Chất lượng cao, giá cả hợp lý.",
+            'keywords' => $category . ', sản phẩm ' . $category . ', ' . config('seo.defaults.keywords'),
             'canonical' => url('/san-pham/danh-muc/' . urlencode($category)),
             'og_image' => asset('images/banner-after.jpg'),
         ];
-        
+
         return view('products.category', compact('products', 'category', 'seoData'));
     }
 

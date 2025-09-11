@@ -42,17 +42,11 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <article class="blog-detail">
-                            <div class="entry-meta mb-4">
+                            <div class="entry-meta mb-4 fs-5 lh-lg">
                                 <span class="entry-date">
                                     <i class="fas fa-calendar-alt me-2"></i>
                                     {{ $news->formatted_date }}
                                 </span>
-                                @if($news->author)
-                                    <span class="entry-author ms-3">
-                                        <i class="fas fa-user me-2"></i>
-                                        {{ $news->author }}
-                                    </span>
-                                @endif
                                 @if($news->category)
                                     <span class="entry-category ms-3">
                                         <i class="fas fa-folder me-2"></i>
@@ -69,7 +63,7 @@
                                 </div>
                             @endif
 
-                            <div class="entry-content">
+                            <div class="entry-content fs-5 lh-lg">
                                 {!! $news->content !!}
                             </div>
 
